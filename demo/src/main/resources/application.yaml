@@ -1,0 +1,2 @@
+storage:
+  base-dir: ${STORAGE_BASE_DIR:C:/storage}

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/files")
-class FilesController(var fileService: FileService) {
+class FilesController(private val fileService: FileService) {
 
 
 
