@@ -9,10 +9,12 @@ import org.springframework.web.bind.annotation.PathVariable
 
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
+import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 
-@RestController("/files")
+@RestController
+@RequestMapping("/files")
 class FilesController(var fileService: FileService) {
 
 
@@ -24,7 +26,7 @@ class FilesController(var fileService: FileService) {
 
     }
 
-    @GetMapping("/files/{fileName}")
+    @GetMapping("/{fileName}")
     fun fetchFile(@PathVariable fileName : String): ResponseEntity<FileDTO> {
 
         return ResponseEntity.ok(fileService.fetchFileWithFileName(fileName))
